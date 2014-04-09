@@ -5,19 +5,18 @@
 #include <cstring>
 #include "LB02.h"
 
-void myMenu(Vector a, Vector b, Vector c, Vector d);
+void myMenu(Vector a, Vector b, Vector c);
 
 using namespace std;
 
 int main()
 {
-    Vector a, b;
-    Vector c, d;
-    myMenu(a, b, c, d);
+    Vector a, b, c;
+    myMenu(a, b, c);
     return 0;
 }
 
-void myMenu(Vector a, Vector b, Vector c, Vector d)
+void myMenu(Vector a, Vector b, Vector c)
 {
     char enterNumber;
     int scalar;
@@ -26,7 +25,8 @@ void myMenu(Vector a, Vector b, Vector c, Vector d)
     {
         system("cls");
         cout << "Hello!\n " << endl;
-        enterVectors (a, b);
+        enterVector (a);
+        enterVector (b);
 
         cout << "If You want to: " << endl;
         cout << "   Exit, please, press <0>\n";
@@ -47,14 +47,15 @@ void myMenu(Vector a, Vector b, Vector c, Vector d)
         if( enterNumber == '1')
         {
             system("cls");
-            sumVectors (a, b, c);
+            c = sumVectors (a, b);
+            outVector (c);
             system("pause");
         }
         if( enterNumber == '2')
         {
             system("cls");
-            subctractVectors (a, b, c);
-
+            c = subctractVectors (a, b);
+            outVector (c);
             system("pause");
         }
         if( enterNumber == '3')
@@ -63,26 +64,32 @@ void myMenu(Vector a, Vector b, Vector c, Vector d)
             int scalar;
             cout << "Enter the scalar: ";
             cin >> scalar;
-            multiplyVectorByScalar (a, b, scalar, c, d);
-
+            c = multiplyVectorByScalar (a, scalar);
+            cout << "The First ";
+            outVector(c);
+            cout << endl;
+            c = multiplyVectorByScalar (b, scalar);
+            cout << "The Second ";
+            outVector(c);
+            cout << endl;
            system("pause");
         }
         if( enterNumber == '4')
         {
             system("cls");
             scalarProductOfVectors (a, b);
+
             cout << endl;
             system("pause");
         }
         if( enterNumber == '5')
         {
             system("cls");
-            vectorProductOfVectors (a, b, c);
+            c = vectorProductOfVectors (a, b);
+            outVector (c);
             cout << endl;
             system("pause");
         }
     }
     system("pause");
-
-
 }
