@@ -8,13 +8,13 @@ struct Vector
     double coordinateZ;
 };
 
-void enterVectors (Vector  a, Vector  b);
+void enterVector (Vector  a);
 
-void sumVectors (Vector  a, Vector  b, Vector c);
-void outVectors(Vector c);
-void subctractVectors (Vector a, Vector b, Vector c);
-void multiplyVectorByScalar (Vector a, Vector b, int scalar, Vector c, Vector d);
-void scalarProductOfVectors (Vector a,Vector b);
-void vectorProductOfVectors (Vector a, Vector b, Vector c);
+Vector sumVectors (Vector  a, Vector  b);
+Vector outVector(Vector c);
+Vector subctractVectors (Vector a, Vector b);
+Vector multiplyVectorByScalar (Vector a, int scalar);
+Vector scalarProductOfVectors (Vector a,Vector b);
+Vector vectorProductOfVectors (Vector a, Vector b);
 
 #endif // LB2_H
